@@ -1,0 +1,10 @@
+server:
+  port: 8004
+
+  spring:
+    application:
+      name: springcloud-zookeeper-consumer8004
+      cloud:
+        #注册到zookeeper地址
+        zookeeper:
+          connect-string: 192.168.200.128:2181

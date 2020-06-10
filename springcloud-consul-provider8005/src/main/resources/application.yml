@@ -1,0 +1,23 @@
+server:
+  port: 8005
+
+spring:
+  application:
+    name: springcloud-consul-provider8005
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/clouddb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root1234
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.chy.springcloud.entities
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
